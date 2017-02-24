@@ -1,0 +1,31 @@
+n:	const 5
+	loadn 4 r1
+      # argument
+	push r1
+	zero r1
+	jsr test
+	pop r1
+	halt
+test:	push rf 
+	#saves the current frame pointer
+	#current frame pointer
+	storer rs rf 
+	loadn  6 r2
+	# reserves some local space
+	add    r2 rs 
+	 # gets the argument  
+        loado -2 r1 
+       # only testing the rs
+	push r1    
+	pop r1
+	#stores contents of r1 at rf+1
+	storeo r1 1
+	#loads the same value into r3
+	loado 1 r3  
+	# restores stack before return 
+	sub rs r2   
+	storer r2 rs
+	# restores frame before return
+	pop rf      
+	rtn
+	

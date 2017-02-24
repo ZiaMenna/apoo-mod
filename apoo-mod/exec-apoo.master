@@ -1,0 +1,18 @@
+#!%python%
+
+import sys
+sys.path.append('/usr/lib/apoo')
+
+from vpu import *
+
+v = Vpu(32,{50000:("pass","print '%c'%(val%256),"),
+            50001:("val = raw_input()","print val,"),
+            50010:('print ','print ')})
+if len(sys.argv) != 2:
+    print "execapoo apoo_program"
+    sys.exit(0)
+a = ReadProgram(sys.argv[1])
+v.load(a)
+try: v.run()
+except EndOfProgram:
+    pass

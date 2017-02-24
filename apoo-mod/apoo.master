@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#change this line to current directory of Apoo files
+DIR=/usr/lib/apoo
+
+%python% $DIR/interface.py $*
+
+
+

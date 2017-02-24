@@ -1,0 +1,17 @@
+x: const	-6
+y: const	-5
+func: mem  	1
+	load x R0
+	load y R1
+	storer R1 R2
+	sub R0 R2	
+	jneg R2 cont
+	mul R0 R0
+	mul R1 R0
+	store R0 func
+	halt
+cont:   loadn 5 R3
+	sub R3 R1
+	store R1 func
+	halt
+		

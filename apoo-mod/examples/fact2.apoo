@@ -1,0 +1,52 @@
+	jsr main
+halt
+
+factorial: 	push rf
+	storer rs rf
+	loado -2 r3
+	loadn 0 r2
+	sub r3 r2
+	jnzero r2 L0
+	loadn 1 r2
+	storer r2 r0
+	pop rf
+	rtn 
+L0: 	loado -2 r4
+	loadn 1 r3
+	sub r4 r3
+	push r3
+	jsr factorial
+	loadn 1 r3
+	sub rs r3
+	storer r3 rs
+	storer r0 r3
+	loado -2 r2
+	mul r3 r2
+	storer r2 r0
+	pop rf
+	rtn 
+	pop rf
+	rtn 
+
+main: 	push rf
+	storer rs rf
+	loadn 2 r2
+	add r2 rs
+	load 50001 r1
+	storeo r1 2
+	loado 2 r2
+	push r2
+	jsr factorial
+	loadn 1 r2
+	sub rs r2
+	storer r2 rs
+	storeo r0 1
+	loado 1 r2
+	store r2 50001
+	loadn 10 r2
+	store r2 50000
+	loadn 2 r2
+	sub rs r2
+	storer r2 rs
+	pop rf
+	rtn 

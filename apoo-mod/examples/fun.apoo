@@ -1,0 +1,29 @@
+	m8: mem 1
+	loadn 1 R31
+	store R31 m8
+	loadn 2 R31
+	load m8 R30
+	push R30
+	push R31
+	jsr F0
+	pop R31
+	pop R30
+	store R30 m8
+	store R31 m8
+	halt
+F0:
+	pop R31
+	m0: mem 1
+	pop R30
+	store R30 m0
+	push R31
+	m4: mem 1
+	loadn 3 R31
+	store R31 m4
+	load m4 R31
+	load m0 R30
+	add R30 R31
+	pop R30
+	push R31
+	push R30
+	rtn

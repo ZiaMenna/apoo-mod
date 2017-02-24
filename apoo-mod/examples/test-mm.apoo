@@ -1,0 +1,9 @@
+	loadn	97	R0
+	store	R0	50000
+	store 	R0	50010
+	store	R0	50001
+	store	R0	50010
+	load	50001	R0
+	store	R0	50001
+	store 	R0	50010
+	halt
