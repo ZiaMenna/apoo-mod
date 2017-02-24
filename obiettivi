@@ -1,0 +1,8 @@
+- scorporare il linguaggio dal codice per gestirlo sotto forma di un unico file autocontenuto (semantica + grammatica)
+- possibilità di cambiare linguaggio specificando il file o sostituendo il file nella cartella
+- codifica del linguaggio del corso di Braga
+- un file .conf per ridefinire le costanti
+
+- traduzione in italiano, file di locale
+
+- interfaccia grafica minima, chiara, adatta all'apprendimento
